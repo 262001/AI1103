@@ -1,0 +1,85 @@
+\documentclass[journal,12pt,two column]{IEEEtran}
+\usepackage[cmex10]{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{stfloats}
+\setlength{\parindent}{0pt}
+
+
+\title{AI1103 - Assignment 1}
+\author{Monika Kharadi - CS20BTECH11026}
+\date{March 2021}
+\begin{document}
+\maketitle
+\section*{\large\textbf{Problem}}
+
+2.12. In a school, there are 1000 students, out of which 430 are girls. It is known that out of 430, 10 percent of girls study in class XII. What is the probability that a student chosen randomly studies in Class XII given that the chosen student is a girl ?
+{\section*{\large\textbf{Solution}}}
+Total number of students : 1000 \\
+Total number of girls : 430  \\
+Total number of girls in Class XII : 10 \% of total girls 
+\begin{align}
+=\frac{10}{100}\times 430 =43
+\end{align}
+Let X $\in$ $\{0,1\}$ be the random variable such that 1 represents girl, 0 represents boy.
+
+\begin{table}[ht]
+\caption{Probability for different values of X}
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline
+    X & P(X) \\
+    \hline
+    1 & 430/1000\\
+    \hline
+    0 & 570/100\\
+    \hline
+    \end{tabular} 
+\end{center}
+\end{table}
+Let Y $\in$ $\{0,1\}$ be the random variable such that 1 represents chosen student is in Class XII, 0 represents chosen student is not in Class XII.
+\begin{table}[ht]
+\caption{Probability for different values of Y}
+\begin{center}
+    \begin{tabular}{|c|c|}
+    \hline
+    Y & P(Y)\\
+    \hline
+    1 & $\frac{1}{2}$ \\
+    \hline
+    0 & $\frac{1}{2}$\\
+    \hline
+    \end{tabular}
+\end{center} 
+\end{table}\\
+Now,
+\begin{align}
+P(Y=1 \vert X=1)   
+\end{align}
+\begin{align}
+=\dfrac{P(X=1\vert Y=1)\cdot P(Y=1)}{\sum_{i=0}^{1} P(X=1\vert Y=i)\cdot P(Y=i)}
+\end{align}
+\begin{center} 
+=$\frac{P(X=1 \vert Y=1)P(Y=1)}{\splitfrac{P(X=1\vert Y=0)P(Y=0)}{+P(X=1\vert Y=1)P(Y=1)}}$
+\end{center}
+\begin{table}[ht]
+\caption{Probability for different values of X,Y}
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Probability & Chosen Student & Value\\
+    \hline
+    $P(X=1\vert Y=0)$ & girl not in Class XII & $\frac{387}{1000}$\\
+    \hline
+    $ P(X=1\vert Y=1)$ & girl in Class XII & $\frac{43}{1000}$ \\
+    \hline
+    \end{tabular}
+\end{center}
+\end{table} 
+\begin{align}
+&=\left[ \dfrac{\left( \frac{43}{1000}\times \frac{1}{2}\right)}{\left( \frac{387}{1000}\times \frac{1}{2} \right) + \left( \frac{43}{1000}\times \frac{1}{2} \right)}\right]\\
+&=\left[ \dfrac{\left( \frac{43}{1000} \right)}{\left( \frac{430}{1000} \right)}\right]\\ 
+&=\dfrac{1}{10} 
+\end{align}
+Hence, the probability that a student chosen randomly studies in Class XII given that the chosen student is a girl is 0.1.
+\end{document}
